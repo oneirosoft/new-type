@@ -1,0 +1,5 @@
+branches:
+  main:
+    regex: ^main$
+    source-branches: []
+    is-main-branch: true
