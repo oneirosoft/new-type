@@ -1,4 +1,4 @@
-name: NewType.Json CI/CD
+name: ${{ github.event_name != 'pull_request' && 'NewType.Json CI/CD' || 'NewType.Json - Pull Request' }}
 
 on:
   push:
@@ -51,7 +51,9 @@ jobs:
         echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Restore dependencies
-      run: dotnet restore src/NewType.Json
+      run: |
+        dotnet restore src/NewType.Json
+        dotnet restore src/NewType.Json -p:TargetFramework=netstandard2.0
 
     - name: Build
       run: dotnet build src/NewType.Json -c Release --no-restore

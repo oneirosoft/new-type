@@ -18,9 +18,9 @@
     <Company>Oneirosofr</Company>
     <Description>A library that provides a way to create strongly-typed wrappers around primitive types.</Description>
     <PackageTags>newtype;strongly-typed;wrappers;validation</PackageTags>
-    <RepositoryUrl>https://github.com/your-repo-url</RepositoryUrl>
+    <RepositoryUrl>https://github.com/oneirosoft/new-type</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/your-repo-url</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

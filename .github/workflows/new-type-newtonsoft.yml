@@ -1,4 +1,4 @@
-name: NewType.Newtonsoft CI/CD
+name: ${{ github.event_name != 'pull_request' && 'NewType.Newtonsoft CI/CD' || 'NewType.Newtonsoft - Pull Request' }}
 
 on:
   push:
