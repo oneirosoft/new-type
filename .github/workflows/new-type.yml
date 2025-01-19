@@ -60,7 +60,7 @@ jobs:
       run: |
         dotnet test src/ \
         --verbosity normal --no-build --no-restore \
-        --configuration Release
+        --configuration Release \
         -- --report-trx  
       
     - name: Publish test results
