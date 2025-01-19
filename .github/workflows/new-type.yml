@@ -40,7 +40,7 @@ jobs:
         echo "# ${{ env.majorMinorPatch }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Set version of PR
-      if: github.event_name != 'pull_request'
+      if: github.event_name == 'pull_request'
       run: |
         echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
 
