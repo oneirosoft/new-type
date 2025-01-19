@@ -8,7 +8,7 @@ public sealed class NewTypeJsonConverter : JsonConverterFactory {
         var currentType = typeToConvert;
         while (currentType != null && currentType != typeof(object)) {
             if (currentType.IsGenericType && 
-                currentType.GetGenericTypeDefinition().IsAssignableTo(typeof(NewType<,>))
+                typeof(NewType<,>).IsAssignableFrom(currentType.GetGenericTypeDefinition())
             ) {
                 return true;
             }

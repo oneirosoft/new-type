@@ -1,15 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Oneiro</RootNamespace>
         <AssemblyName>Oneiro.NewType.Json</AssemblyName>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageId>Oneiro.NewType.Json</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Oneirosoft Contributors</Authors>
+        <Company>Oneirosofr</Company>
+        <Description>Easily serialize and deserialize types in Oneiro.NewTypes.Core using System.Text.Json</Description>
+        <PackageTags>json;system.text.json;newtype;strongly-typed;wrappers;validation</PackageTags>
+        <RepositoryUrl>https://github.com/oneirosoft/new-type</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
+    </PropertyGroup>
+    
     <ItemGroup>
       <ProjectReference Include="..\NewType.Core\NewType.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="System.Text.Json" Version="9.0.1" />
     </ItemGroup>
 
 </Project>

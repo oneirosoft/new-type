@@ -1,5 +1,7 @@
 # NewType
 
+[![NewType.Core CI/CD](https://github.com/oneirosoft/new-type/actions/workflows/new-type-build.yml/badge.svg)](https://github.com/oneirosoft/new-type/actions/workflows/new-type-build.yml)
+
 A new type for primitives.
 
 `Oneiro.NewType.Core` is a library that provides a way to create strongly-typed wrappers around primitive types. This can be useful for adding type safety and domain-specific logic to your code.

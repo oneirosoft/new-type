@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Core", "NewType.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Json", "NewType.Json\NewType.Json.csproj", "{71A0CCBE-97C2-42C3-AD7B-D433F7F831F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.NewtonSoft", "NewType.NewtonSoft\NewType.NewtonSoft.csproj", "{B5F6BB6F-8FB5-400B-9B2F-6C5325F62D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Newtonsoft", "NewType.Newtonsoft\NewType.Newtonsoft.csproj", "{B5F6BB6F-8FB5-400B-9B2F-6C5325F62D7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2417B408-1672-4559-B18E-4B050C7099AF}"
 EndProject

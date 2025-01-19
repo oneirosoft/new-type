@@ -3,14 +3,13 @@
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net6.0;net8.0;net9.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <RootNamespace>Oneiro</RootNamespace>
     <AssemblyName>Oneiro.NewType.Core</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageId>Oneiro.NewType.Core</PackageId>
     <Version>1.0.0</Version>
@@ -18,9 +17,9 @@
     <Company>Oneirosofr</Company>
     <Description>A library that provides a way to create strongly-typed wrappers around primitive types.</Description>
     <PackageTags>newtype;strongly-typed;wrappers;validation</PackageTags>
-    <RepositoryUrl>https://github.com/your-repo-url</RepositoryUrl>
+    <RepositoryUrl>https://github.com/oneirosoft/new-type</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/your-repo-url</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

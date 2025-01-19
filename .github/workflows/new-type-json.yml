@@ -1,0 +1,77 @@
+name: NewType.Json CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  pull_request:
+
+permissions:
+  checks: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '9.x'
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v3.1.2
+      with:
+        versionSpec: '6.0.0'
+
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v3.1.2
+      with:
+        useConfigFile: true
+    
+    - name: Run GitVersion
+      run: dotnet gitversion /output buildserver
+
+    - name: Set version
+      if: github.event_name != 'pull_request'
+      run: |
+        echo "# ${{ env.majorMinorPatch }}" >> $GITHUB_STEP_SUMMARY
+
+    - name: Set version of PR
+      if: github.event_name == 'pull_request'
+      run: |
+        echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
+
+    - name: Restore dependencies
+      run: |
+        dotnet restore src/NewType.Json -p:TargetFramework=netstandard2.0
+        dotnet restore src/NewType.Json -p:TargetFramework=net6.0
+
+    - name: Build
+      run: dotnet build src/NewType.Json -c Release
+
+    - name: Test
+      run: dotnet test src/tests/NewType.Json.Tests --verbosity normal -- --report-trx  
+      
+    - name: Publish test results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      with:
+        files: '**/*.trx'
+        action_fail: true
+    - name: Pack
+      if: github.event_name != 'pull_request'
+      run: dotnet pack src/NewType.Json -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
+
+    - name: Publish to NuGet.org
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push '**/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KE
