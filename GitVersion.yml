@@ -1,7 +1,7 @@
+strategies:
+  - Mainline
 branches:
   main:
     regex: ^main$
     source-branches: []
     is-main-branch: true
-    prevent-increment:
-      of-merged-branch: false 
