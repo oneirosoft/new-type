@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\NewType.Newtonsoft\NewType.Newtonsoft.csproj" />
+    <ProjectReference Include="..\..\NewType.Core\NewType.Core.csproj" />
   </ItemGroup>
 
 </Project>
