@@ -1,6 +1,4 @@
-# NewType
-
-[![NewType.Core CI/CD](https://github.com/oneirosoft/new-type/actions/workflows/new-type-build.yml/badge.svg)](https://github.com/oneirosoft/new-type/actions/workflows/new-type-build.yml)
+# NewType Core
 
 A new type for primitives.
 

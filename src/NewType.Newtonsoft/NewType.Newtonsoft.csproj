@@ -10,7 +10,6 @@
     <PropertyGroup>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageId>Oneiro.NewType.Newtonsoft</PackageId>
-        <Version>1.0.0</Version>
         <Authors>Oneirosoft Contributors</Authors>
         <Company>Oneirosofr</Company>
         <Description>Easily serialize and deserialize types in Oneiro.NewTypes.Core using JSON.NET</Description>
@@ -19,6 +18,17 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="README.md">
+            <Pack>true</Pack>
+            <PackagePath>README.md</PackagePath>
+        </None>
+        <None Update="LICENSE">
+            <Pack>true</Pack>
+            <PackagePath>LICENSE</PackagePath>
+        </None>
+    </ItemGroup>
     
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
