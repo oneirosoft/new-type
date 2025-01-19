@@ -1,5 +1,8 @@
 name: NewType Core - Publish
 
+on:
+  workflow_dispatch:
+
 permissions:
   checks: write
   pull-requests: write
