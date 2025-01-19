@@ -1,4 +1,4 @@
-name: ${{ github.event_name != 'pull_request' && 'NewType.Core CI/CD' || 'NewType.Core - Pull Request' }}
+name: NewType.Core CI/CD
 
 on:
   push:
