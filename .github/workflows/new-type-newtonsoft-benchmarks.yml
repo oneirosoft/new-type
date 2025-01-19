@@ -1,0 +1,30 @@
+name: New Type Newtonsoft - Benchmarks
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      deployments: write
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '9.x'
+    - name: Run Benchmarks
+      run: dotnet run --project src/benchmarks/Oneiro.NewType.Newtonsoft.Benchmarks -c Release
+    - name: Publish reuslts
+      run: cat BenchmarkDotNet.Artifacts/results/JsonConverterBenchmarks-report-github.md >> $GITHUB_STEP_SUMMARY

@@ -8,6 +8,8 @@ using Oneiro;
 BenchmarkRunner.Run<JsonConverterBenchmarks>();
 
 [MemoryDiagnoser, SimpleJob]
+[JsonExporterAttribute.Full]
+[JsonExporterAttribute.FullCompressed]
 public class JsonConverterBenchmarks {
     [JsonConverter(typeof(NewTypeJsonConverter))]
     public sealed record WrappedInt : NewType<int, WrappedInt> {
