@@ -11,6 +11,6 @@ branches:
     source-branches:
       - main
   pull-requests:
-    track-merge-target: true
+    tracks-release-branch: true
 
 
