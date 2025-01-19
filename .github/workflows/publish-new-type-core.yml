@@ -1,9 +1,4 @@
-name: NewType CI
-
-on:
-  push:
-    branches:
-      - main
+name: NewType Core - Publish
 
 permissions:
   checks: write
@@ -39,17 +34,17 @@ jobs:
 
     - name: Set version
       run: |
-        echo "# ${{ env.majorMinorPatch }}" >> $GITHUB_STEP_SUMMARY
+        echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Restore dependencies
-      run: dotnet restore src/
+      run: dotnet restore src/NewType.Core
 
     - name: Build
-      run: dotnet build src/ -c Release --no-restore
+      run: dotnet build src/NewType.Core -c Release --no-restore
 
     - name: Test
       run: |
-        dotnet test src/ \
+        dotnet test src/NewType.Core \
         --verbosity normal --no-build --no-restore \
         --configuration Release \
         -- --report-trx  
@@ -59,3 +54,11 @@ jobs:
       with:
         files: '**/*.trx'
         action_fail: true
+
+    - name: Pack
+      run: dotnet pack src/NewType.Core -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
+
+    - name: Publish to NuGet.org
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push '**/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
