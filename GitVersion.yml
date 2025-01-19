@@ -13,5 +13,7 @@ branches:
   pull-request:
     mode: ContinuousDelivery
     label: PullRequest
+    source-branches:
+      - main
 
 
