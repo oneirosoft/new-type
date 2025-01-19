@@ -37,14 +37,14 @@ jobs:
         echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Restore dependencies
-      run: dotnet restore src/NewType.Core
+      run: dotnet restore src/NewType.Newtonsoft
 
     - name: Build
-      run: dotnet build src/NewType.Core -c Release --no-restore
+      run: dotnet build src/NewType.Newtonsoft -c Release --no-restore
 
     - name: Test
       run: |
-        dotnet test src/NewType.Core \
+        dotnet test src/NewType.Newtonsoft \
         --verbosity normal --no-build --no-restore \
         --configuration Release \
         -- --report-trx  
@@ -56,7 +56,7 @@ jobs:
         action_fail: true
 
     - name: Pack
-      run: dotnet pack src/NewType.Core -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
+      run: dotnet pack src/NewType.Newtonsoft -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
 
     - name: Publish to NuGet.org
       env:
