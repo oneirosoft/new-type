@@ -56,7 +56,7 @@ jobs:
         dotnet restore src/NewType.Json -p:TargetFramework=net6.0
 
     - name: Build
-      run: dotnet build src/NewType.Json -c Release --no-restore
+      run: dotnet build src/NewType.Json -c Release
 
     - name: Test
       run: dotnet test src/tests/NewType.Json.Tests --verbosity normal -- --report-trx  
