@@ -53,8 +53,12 @@ jobs:
       run: dotnet build src/NewType.Core -c Release --no-restore
 
     - name: Test
-      run: dotnet test src/tests/NewType.Core.Tests  
-
+      run: dotnet test src/tests/NewType.Core.Tests -- report-trx  
+    - name: Publish test results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      with:
+        files: '**/*.trx'
+        action_fail: true
     - name: Pack
       if: github.event_name != 'pull_request'
       run: dotnet pack src/NewType.Core -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
