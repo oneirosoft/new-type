@@ -5,3 +5,13 @@ branches:
     regex: ^main$
     source-branches: []
     is-main-branch: true
+  topics:
+    regex: ^topics?[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    source-branches:
+      - main
+  pull-request:
+    mode: ContinuousDelivery
+    label: PullRequest
+
+

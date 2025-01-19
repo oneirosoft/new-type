@@ -38,7 +38,7 @@ jobs:
 
     - name: Set version
       run: |
-        echo "# ${{ env.majorMinorPatch }}" >> $GITHUB_STEP_SUMMARY
+        echo "# ${{ env.semVer }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Restore dependencies
       run: dotnet restore src/
