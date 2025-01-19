@@ -53,7 +53,8 @@ jobs:
       run: dotnet build src/NewType.Core -c Release --no-restore
 
     - name: Test
-      run: dotnet test src/tests/NewType.Core.Tests -- --report-trx  
+      run: dotnet test src/tests/NewType.Core.Tests --verbosity normal -- --report-trx  
+      
     - name: Publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
       with:
