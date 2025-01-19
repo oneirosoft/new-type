@@ -7,6 +7,7 @@
     <LangVersion>default</LangVersion>
     <RootNamespace>Oneiro</RootNamespace>
     <AssemblyName>Oneiro.NewType.Core</AssemblyName>
+    <PackageIcon>oneiro_icon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -20,9 +21,14 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>oneiro_icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\.images\oneiro_icon.png" 
+          Pack="true"
+          PackagePath="."
+          Link="oneiro_icon.png" />
     <None Include="README.md" Pack="true" PackagePath="." />
     <None Include="LICENSE" Pack="true" PackagePath="." />
   </ItemGroup>

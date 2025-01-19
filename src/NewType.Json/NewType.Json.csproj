@@ -20,9 +20,14 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIconUrl>oneiro_icon.png</PackageIconUrl>
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="..\..\.images\oneiro_icon.png"
+              Pack="true"
+              PackagePath="."
+              Link="oneiro_icon.png" />
         <None Include="README.md" Pack="true" PackagePath="." />
         <None Include="LICENSE" Pack="true" PackagePath="." />
     </ItemGroup>

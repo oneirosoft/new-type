@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Newtonsoft.Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{6BDB200D-3F13-44A6-98DF-EC636C41828A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Newtonsoft.Benchmarks", "benchmarks\NewType.Newtonsoft.Benchmarks\NewType.Newtonsoft.Benchmarks.csproj", "{B66B9F12-9D26-4823-B9C3-21E0B60F500F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oneiro.NewType.Newtonsoft.Benchmarks", "benchmarks\Oneiro.NewType.Newtonsoft.Benchmarks\Oneiro.NewType.Newtonsoft.Benchmarks.csproj", "{B66B9F12-9D26-4823-B9C3-21E0B60F500F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Core.Tests", "tests\NewType.Core.Tests\NewType.Core.Tests.csproj", "{D0D7320E-8B64-4419-829E-0DF8C48BE7E6}"
 EndProject
