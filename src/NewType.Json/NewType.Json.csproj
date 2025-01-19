@@ -12,7 +12,6 @@
     <PropertyGroup>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageId>Oneiro.NewType.Json</PackageId>
-        <Version>1.0.0</Version>
         <Authors>Oneirosoft Contributors</Authors>
         <Company>Oneirosofr</Company>
         <Description>Easily serialize and deserialize types in Oneiro.NewTypes.Core using System.Text.Json</Description>

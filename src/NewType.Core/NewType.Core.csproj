@@ -12,7 +12,6 @@
   <PropertyGroup>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageId>Oneiro.NewType.Core</PackageId>
-    <Version>1.0.0</Version>
     <Authors>Oneirosoft Contributors</Authors>
     <Company>Oneirosofr</Company>
     <Description>A library that provides a way to create strongly-typed wrappers around primitive types.</Description>
