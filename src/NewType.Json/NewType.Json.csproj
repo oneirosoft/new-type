@@ -20,6 +20,17 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="README.md">
+            <Pack>true</Pack>
+            <PackagePath>README.md</PackagePath>
+        </None>
+        <None Update="LICENSE">
+            <Pack>true</Pack>
+            <PackagePath>LICENSE</PackagePath>
+        </None>
+    </ItemGroup>
     
     <ItemGroup>
       <ProjectReference Include="..\NewType.Core\NewType.Core.csproj" />
