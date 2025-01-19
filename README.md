@@ -1,9 +1,9 @@
 # New Types
 
 [![NewType CI](https://github.com/oneirosoft/new-type/actions/workflows/new-type.yml/badge.svg)](https://github.com/oneirosoft/new-type/actions/workflows/new-type.yml)
-![NuGet Version - Oneiro.NewType.Core](https://img.shields.io/nuget/v/Oneiro.NewType.Core)
-![NuGet Version - Oneiro.NewType.Json](https://img.shields.io/nuget/v/Oneiro.NewType.Json)
-![NuGet Version - Oneiro.NewType.Newtonsoft](https://img.shields.io/nuget/v/Oneiro.NewType.Newtonsoft)
+![NuGet Version - Oneiro.NewType.Core](https://img.shields.io/nuget/v/Oneiro.NewType.Core?label=nuget%20-%20Oneiro.NewType.Core)
+![NuGet Version - Oneiro.NewType.Json](https://img.shields.io/nuget/v/Oneiro.NewType.Json?label=nuget%20-%20Oneiro.NewType.Json)
+![NuGet Version - Oneiro.NewType.Newtonsoft](https://img.shields.io/nuget/v/Oneiro.NewType.Newtonsoft?label=nuget%20-%20Oneiro.NewType.Newtonsoft)
 
 The Oneiro project is a collection of libraries designed to provide strongly-typed wrappers around primitive types,
 adding type safety and domain-specific logic to your code. The project is divided into three main components:
