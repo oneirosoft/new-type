@@ -1,9 +1,8 @@
-name: NewType CI
+name: NewType CI - Pull Request
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
 
 permissions:
   checks: write
@@ -59,13 +58,3 @@ jobs:
       with:
         files: '**/*.trx'
         action_fail: true
-
-    - name: Pack
-      if: github.event_name != 'pull_request'
-      run: dotnet pack src/ -c Release --no-build --output ./artifacts /p:PackageVersion=${{ env.majorMinorPatch }}
-
-    - name: Publish to NuGet.org
-      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: dotnet nuget push '**/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
