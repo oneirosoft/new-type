@@ -1,4 +1,4 @@
-name: NewType.Core CI/CD
+name: NewType CI
 
 on:
   push:
@@ -59,7 +59,9 @@ jobs:
     - name: Test
       run: |
         dotnet test src/ \
-        --verbosity normal --no-build --no-restore -- --report-trx  
+        --verbosity normal --no-build --no-restore \
+        --configuration Release
+        -- --report-trx  
       
     - name: Publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
