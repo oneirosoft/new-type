@@ -10,9 +10,5 @@ branches:
     label: '{BranchName}'
     source-branches:
       - main
-  pull-request:
-    label: PullRequest
-    source-branches:
-      - main
 
 
