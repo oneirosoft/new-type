@@ -10,5 +10,7 @@ branches:
     label: '{BranchName}'
     source-branches:
       - main
+  pull-requests:
+    track-merge-target: true
 
 
