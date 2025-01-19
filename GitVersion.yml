@@ -10,7 +10,20 @@ branches:
     label: '{BranchName}'
     source-branches:
       - main
-  pull-requests:
-    tracks-release-branch: true
-
+  pull-request:
+    mode: ContinuousDelivery
+    label: PullRequest
+    increment: Inherit
+    prevent-increment:
+      of-merged-branch: true
+      when-current-commit-tagged: false
+    label-number-pattern: '[/-](?<number>\d+)'
+    track-merge-message: true
+    regex: ^(pull|pull\-requests|pr)[/-]
+    source-branches:
+      - main
+      - feature
+      - hotfix
+    is-source-branch-for: []
+    pre-release-weight: 30000
 
