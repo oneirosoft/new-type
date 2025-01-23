@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\NewType.FluentValidation\NewType.FluentValidation.csproj" />
+      <ProjectReference Include="..\..\NewType.FluentValidation\NewType.FluentValidation.csproj" />
     </ItemGroup>
 
     <ItemGroup>

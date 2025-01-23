@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.Core.Refit.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.FluentValidation", "NewType.FluentValidation\NewType.FluentValidation.csproj", "{AD3D4963-A39E-440E-B0AF-66EE27CB5E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.FluentValidation.Tests", "NewType.FluentValidation.Tests\NewType.FluentValidation.Tests.csproj", "{AFF6CFD6-C49D-4A0D-8328-28B260738CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewType.FluentValidation.Tests", "tests\NewType.FluentValidation.Tests\NewType.FluentValidation.Tests.csproj", "{AFF6CFD6-C49D-4A0D-8328-28B260738CAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oneiro.NewType.Benchmarks", "benchmarks\Oneiro.NewType.Benchmarks\Oneiro.NewType.Benchmarks.csproj", "{37242848-EBFC-449C-A662-B12C17CC24D0}"
 EndProject
