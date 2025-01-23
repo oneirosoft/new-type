@@ -27,18 +27,17 @@ public sealed class NewTypeRefitTests {
     public async Task Refit_Segment_Should_Format_NewType_Value() {
         var result = await _restClient.GeFromSegment(WrappedInt.From(42));
         var actual = result.RequestMessage?.RequestUri?.ToString();
-        var expected = "http://newtype/test/42";
+        const string expected = "http://newtype/test/42";
         await Assert.That(actual).IsEqualTo(expected);
     }
 }
 
 public sealed class MockHandler : DelegatingHandler {
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) {
-        return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) {
+    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) =>
+        Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) {
             Content = new StringContent("hello"),
             RequestMessage = request
         });
-    }
 }
 
 public sealed record WrappedInt : NewType<int, WrappedInt> {

@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Oneiro.Tests;
 
 public sealed class NewTypeTests {
@@ -82,6 +84,19 @@ public sealed class NewTypeTests {
         var actual = WrappedInt.From(42);
         var expected = WrappedInt.From(42);
         await Assert.That(actual != expected).IsFalse();
+    }
+
+    [Test]
+    [Arguments("C")]
+    [Arguments("D4")]
+    [Arguments(null)]
+    public async Task NewType_Can_Be_Formatted(string? format) {
+        var actual = WrappedInt.From(42).ToString(format, new CultureInfo("en-US"));
+        await (format switch {
+            "C" => async () => await Assert.That(actual).IsEqualTo("$42.00"),
+            "D4" => async () => await Assert.That(actual).IsEqualTo("0042"),
+            _ => (Func<Task<string?>>) (async () => await Assert.That(actual).IsEqualTo("42"))
+        })();
     }
     
     private sealed 

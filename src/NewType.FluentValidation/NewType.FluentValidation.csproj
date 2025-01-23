@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Oneiro</RootNamespace>
+        <AssemblyName>Oneiro.NewType.FluentValidation</AssemblyName>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageId>Oneiro.NewType.FluentValidation</PackageId>
+        <Authors>Oneirosoft Contributors</Authors>
+        <Company>Oneirosofr</Company>
+        <Description>Entensions to support validation of new types using fluent validations</Description>
+        <PackageTags>newtype;strongly-typed;wrappers;validation;fluent;</PackageTags>
+        <RepositoryUrl>https://github.com/oneirosoft/new-type</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/oneirosoft/new-type</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>oneiro_icon.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\.images\oneiro_icon.png"
+              Pack="true"
+              PackagePath="."
+              Link="oneiro_icon.png" />
+        <None Include="README.md" Pack="true" PackagePath="." />
+        <None Include="LICENSE" Pack="true" PackagePath="." />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.11.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NewType.Core\NewType.Core.csproj" />
+    </ItemGroup>
+
+</Project>

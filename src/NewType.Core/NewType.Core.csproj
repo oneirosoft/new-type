@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <TargetFrameworks>netstandard2.0;net6.0;net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <RootNamespace>Oneiro</RootNamespace>
     <AssemblyName>Oneiro.NewType.Core</AssemblyName>
@@ -33,4 +33,8 @@
     <None Include="LICENSE" Pack="true" PackagePath="." />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Memory" Version="4.6.0" />
+  </ItemGroup>
+  
 </Project>

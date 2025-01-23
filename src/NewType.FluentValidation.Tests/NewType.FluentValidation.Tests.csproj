@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Oneiro.Tests</RootNamespace>
+        <AssemblyName>Oneiro.NewType.FluentValidation.Tests</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NewType.FluentValidation\NewType.FluentValidation.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="1.5.2" />
+      <PackageReference Include="TUnit" Version="0.6.159" />
+    </ItemGroup>
+
+</Project>

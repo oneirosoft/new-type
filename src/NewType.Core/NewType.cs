@@ -1,10 +1,21 @@
-﻿namespace Oneiro;
+﻿using System.Globalization;
+
+namespace Oneiro;
 
 /// <summary>
 /// Represents a new type that wraps a value of type <typeparamref name="T"/>.
+/// <code>
+/// public sealed class WrappedInt : NewType&lt;int, WrappedInt> {
+///     private WrappedInt(int value) : base(value) {}
+/// }
+/// </code>
 /// </summary>
 /// <typeparam name="T">The type of the value being wrapped.</typeparam>
 /// <typeparam name="TNewType">The type of the new type.</typeparam>
+/// <remarks>
+/// When creating a new type, it is recommended to keep the
+/// constructor <c>private</c> or <c>protected</c>.
+/// </remarks>
 public abstract 
 
 #if NET6_0_OR_GREATER
@@ -38,13 +49,23 @@ NewType<T, TNewType> : IFormattable
     /// <returns>The wrapped value.</returns>
     public T GetValue() => _value;
     
+    /// <summary>
+    /// Factory method to create a new instance of the new type.
+    /// The From method is preferred over the constructor.
+    /// </summary>
+    /// <param name="value">
+    /// The value to wrap.
+    /// </param>
+    /// <returns>
+    /// A new instance of the new type.
+    /// </returns>
     public static TNewType From(T value) =>
         ActivatorUtil.CreateInstanceFactory<T, TNewType>()(value);
 
 
-    public string ToString(string? format, IFormatProvider? formatProvider) =>
+    public string ToString(string? format, IFormatProvider? formatProvider = null) =>
         _value switch {
-            IFormattable value => value.ToString(format, formatProvider),
+            IFormattable value => value.ToString(format, formatProvider ?? CultureInfo.CurrentCulture),
             _ => ToString()
         };
     
