@@ -47,7 +47,7 @@ jobs:
 
     - name: Test
       run: |
-        dotnet test src/NewType.FluentValidation \
+        dotnet test src/tests/NewType.FluentValidation.Tests \
         --verbosity normal --no-build --no-restore \
         --configuration Release \
         -- --report-trx  

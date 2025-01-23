@@ -47,7 +47,7 @@ jobs:
 
     - name: Test
       run: |
-        dotnet test src/NewType.Json \
+        dotnet test src/tests/NewType.Json.Tests \
         --verbosity normal --no-build --no-restore \
         --configuration Release \
         -- --report-trx  
